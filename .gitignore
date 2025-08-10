@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+adk_sessions.db
+
+# OS
+.DS_Store
+Thumbs.db
