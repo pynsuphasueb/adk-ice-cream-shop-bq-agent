@@ -1,0 +1,101 @@
+flavor,sold_at,price_thb,quantity,branch,total_sale
+Thai Tea,2025-07-02T11:36:34+07:00,75,1,Hat Yai - Lee Gardens,75
+Matcha Green Tea,2025-07-02T15:28:36+07:00,55,1,Khon Kaen - Central,55
+Vanilla,2025-07-02T19:10:39+07:00,49,2,Phuket Old Town,98
+Chocolate,2025-07-03T11:40:12+07:00,85,1,Udon Thani,85
+Thai Tea,2025-07-03T15:32:32+07:00,75,3,Rama 9,225
+Coconut,2025-07-03T17:59:11+07:00,89,2,Khon Kaen - Central,178
+Coconut,2025-07-04T10:54:04+07:00,85,1,Silom Complex,85
+Strawberry,2025-07-04T17:11:00+07:00,75,1,Udon Thani,75
+Durian,2025-07-04T19:47:26+07:00,65,1,Silom Complex,65
+Chocolate,2025-07-04T19:56:17+07:00,59,1,Khon Kaen - Central,59
+Matcha Green Tea,2025-07-04T21:14:55+07:00,65,4,Hat Yai - Lee Gardens,260
+Mango,2025-07-05T11:15:14+07:00,85,2,Siam Paragon,170
+Strawberry,2025-07-05T18:46:57+07:00,55,1,CentralWorld,55
+Cookies & Cream,2025-07-05T19:47:10+07:00,75,2,Khon Kaen - Central,150
+Chocolate,2025-07-05T21:31:39+07:00,49,1,Chiang Mai - Nimman,49
+Mango,2025-07-06T11:28:19+07:00,95,1,Siam Paragon,95
+Thai Tea,2025-07-06T17:28:39+07:00,69,1,Hat Yai - Lee Gardens,69
+Chocolate,2025-07-07T16:42:03+07:00,49,2,Bangna,98
+Durian,2025-07-07T17:06:24+07:00,59,2,Khon Kaen - Central,118
+Chocolate,2025-07-07T18:27:44+07:00,69,1,Chiang Mai - Nimman,69
+Vanilla,2025-07-07T20:46:08+07:00,45,1,Hat Yai - Lee Gardens,45
+Durian,2025-07-08T16:22:16+07:00,49,2,Rama 9,98
+Coconut,2025-07-08T17:18:09+07:00,65,1,Rama 9,65
+Durian,2025-07-09T11:58:11+07:00,45,1,Silom Complex,45
+Mango,2025-07-09T20:42:26+07:00,79,2,Khon Kaen - Central,158
+Strawberry,2025-07-10T18:11:09+07:00,75,3,Phuket Old Town,225
+Durian,2025-07-11T13:32:16+07:00,65,1,Siam Paragon,65
+Durian,2025-07-12T16:57:07+07:00,69,1,Silom Complex,69
+Vanilla,2025-07-12T21:48:30+07:00,79,2,Chiang Mai - Nimman,158
+Mango,2025-07-13T13:56:12+07:00,45,1,Phuket Old Town,45
+Blueberry Cheesecake,2025-07-13T13:56:55+07:00,75,4,Silom Complex,300
+Blueberry Cheesecake,2025-07-13T21:22:05+07:00,85,1,Rama 9,85
+Vanilla,2025-07-14T11:00:45+07:00,59,2,Hat Yai - Lee Gardens,118
+Chocolate,2025-07-14T14:54:42+07:00,55,2,Silom Complex,110
+Thai Tea,2025-07-14T15:18:04+07:00,85,1,Siam Paragon,85
+Vanilla,2025-07-14T15:27:01+07:00,55,2,Phuket Old Town,110
+Matcha Green Tea,2025-07-14T17:11:43+07:00,79,2,Phuket Old Town,158
+Chocolate,2025-07-14T17:49:59+07:00,89,1,Chiang Mai - Nimman,89
+Blueberry Cheesecake,2025-07-15T12:13:07+07:00,49,2,Siam Paragon,98
+Cookies & Cream,2025-07-15T12:38:42+07:00,75,1,Phuket Old Town,75
+Durian,2025-07-15T17:11:34+07:00,59,1,CentralWorld,59
+Thai Tea,2025-07-15T17:18:29+07:00,49,1,Bangna,49
+Coconut,2025-07-16T18:17:09+07:00,65,1,Silom Complex,65
+Blueberry Cheesecake,2025-07-17T17:00:54+07:00,95,2,Bangna,190
+Durian,2025-07-17T18:10:35+07:00,95,1,Siam Paragon,95
+Coconut,2025-07-17T18:41:05+07:00,79,2,Bangna,158
+Strawberry,2025-07-17T21:00:19+07:00,85,2,Hat Yai - Lee Gardens,170
+Strawberry,2025-07-19T10:10:54+07:00,55,1,Bangna,55
+Durian,2025-07-19T10:32:42+07:00,85,1,Rama 9,85
+Cookies & Cream,2025-07-19T15:17:02+07:00,69,2,CentralWorld,138
+Blueberry Cheesecake,2025-07-19T19:13:25+07:00,95,2,Silom Complex,190
+Matcha Green Tea,2025-07-19T19:35:16+07:00,45,1,Chiang Mai - Nimman,45
+Strawberry,2025-07-20T19:58:29+07:00,65,1,Khon Kaen - Central,65
+Blueberry Cheesecake,2025-07-21T18:51:58+07:00,55,1,Phuket Old Town,55
+Blueberry Cheesecake,2025-07-21T19:45:50+07:00,89,1,Chiang Mai - Nimman,89
+Durian,2025-07-22T13:26:23+07:00,69,1,Silom Complex,69
+Mango,2025-07-22T17:14:37+07:00,69,3,CentralWorld,207
+Mango,2025-07-22T18:14:09+07:00,59,1,CentralWorld,59
+Mango,2025-07-24T11:34:02+07:00,95,1,Phuket Old Town,95
+Chocolate,2025-07-24T15:58:18+07:00,59,1,CentralWorld,59
+Matcha Green Tea,2025-07-24T20:24:01+07:00,85,1,Chiang Mai - Nimman,85
+Strawberry,2025-07-25T15:38:08+07:00,65,1,Bangna,65
+Strawberry,2025-07-25T21:57:23+07:00,55,1,Rama 9,55
+Matcha Green Tea,2025-07-26T18:29:51+07:00,49,1,Rama 9,49
+Strawberry,2025-07-27T18:48:54+07:00,79,1,Hat Yai - Lee Gardens,79
+Coconut,2025-07-27T21:09:13+07:00,79,1,Siam Paragon,79
+Vanilla,2025-07-28T14:42:02+07:00,85,4,Khon Kaen - Central,340
+Coconut,2025-07-28T17:47:03+07:00,79,1,Chiang Mai - Nimman,79
+Cookies & Cream,2025-07-29T13:38:59+07:00,89,1,Silom Complex,89
+Blueberry Cheesecake,2025-07-29T20:30:48+07:00,79,1,Bangna,79
+Mango,2025-07-30T13:47:40+07:00,95,2,Bangna,190
+Durian,2025-07-31T12:16:26+07:00,69,1,Rama 9,69
+Cookies & Cream,2025-07-31T14:02:38+07:00,85,2,Phuket Old Town,170
+Thai Tea,2025-07-31T15:21:15+07:00,55,1,Chiang Mai - Nimman,55
+Coconut,2025-07-31T19:02:03+07:00,85,1,Hat Yai - Lee Gardens,85
+Coconut,2025-08-01T11:35:33+07:00,89,2,Chiang Mai - Nimman,178
+Durian,2025-08-02T11:08:25+07:00,59,1,Chiang Mai - Nimman,59
+Strawberry,2025-08-02T11:09:55+07:00,75,1,Hat Yai - Lee Gardens,75
+Matcha Green Tea,2025-08-02T13:38:07+07:00,89,1,Siam Paragon,89
+Blueberry Cheesecake,2025-08-02T20:06:21+07:00,55,1,Phuket Old Town,55
+Strawberry,2025-08-03T21:26:22+07:00,49,2,Hat Yai - Lee Gardens,98
+Durian,2025-08-05T11:05:06+07:00,59,5,Hat Yai - Lee Gardens,295
+Thai Tea,2025-08-05T19:44:11+07:00,85,1,Khon Kaen - Central,85
+Blueberry Cheesecake,2025-08-05T21:15:11+07:00,79,2,Hat Yai - Lee Gardens,158
+Vanilla,2025-08-05T21:28:35+07:00,65,3,Rama 9,195
+Durian,2025-08-06T10:08:36+07:00,75,2,Hat Yai - Lee Gardens,150
+Mango,2025-08-07T13:43:19+07:00,75,1,Phuket Old Town,75
+Vanilla,2025-08-07T14:30:00+07:00,85,1,Rama 9,85
+Matcha Green Tea,2025-08-07T14:58:00+07:00,69,1,Rama 9,69
+Durian,2025-08-07T15:26:58+07:00,69,3,Silom Complex,207
+Vanilla,2025-08-07T20:23:09+07:00,95,1,Rama 9,95
+Thai Tea,2025-08-08T13:01:54+07:00,85,2,Bangna,170
+Cookies & Cream,2025-08-08T14:18:29+07:00,65,3,Udon Thani,195
+Blueberry Cheesecake,2025-08-08T18:17:37+07:00,59,1,Udon Thani,59
+Chocolate,2025-08-09T16:47:08+07:00,55,1,Phuket Old Town,55
+Thai Tea,2025-08-09T17:47:06+07:00,69,2,Udon Thani,138
+Blueberry Cheesecake,2025-08-09T18:34:35+07:00,95,1,Khon Kaen - Central,95
+Vanilla,2025-08-10T11:57:53+07:00,95,1,Hat Yai - Lee Gardens,95
+Blueberry Cheesecake,2025-08-10T13:58:14+07:00,65,3,Chiang Mai - Nimman,195
+Chocolate,2025-08-10T20:52:00+07:00,85,1,Silom Complex,85
