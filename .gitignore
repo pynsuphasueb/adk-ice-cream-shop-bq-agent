@@ -9,3 +9,5 @@ adk_sessions.db
 # OS
 .DS_Store
 Thumbs.db
+
+*.egg-info/
