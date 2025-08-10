@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BigQuery Agent — Web UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <style>
+    .msg { white-space: pre-wrap }
+    .bubble { max-width: 85% }
+    .prosem { line-height: 1.6 }
+    .prosem pre { padding: .75rem; border-radius: .5rem; overflow:auto; background:#0f172a0d }
+    .prosem code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace }
+    .prosem ul { list-style: disc; padding-left: 1.25rem }
+    .prosem ol { list-style: decimal; padding-left: 1.25rem }
+    .prosem p { margin: .25rem 0 }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200">
+  <div class="max-w-3xl mx-auto p-4 sm:p-6">
+    <header class="mb-4">
+      <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Icecream Shop BigQuery Agent</h1>
+      <p class="text-slate-600">AI agent สำหรับถามคำถามเกี่ยวกับข้อมูลใน BigQuery</p>
+    </header>
+
+    <main class="bg-white rounded-2xl shadow p-4 sm:p-8">
+      <div id="chat" class="space-y-4 h-[55vh] overflow-y-auto pr-1"></div>
+
+      <form id="askForm" class="mt-4 flex gap-2">
+        <textarea id="q" rows="1" placeholder="พิมพ์คำถาม เช่น top 5 branches by total_sale"
+               class="flex-1 rounded-xl border border-slate-300 px-3 py-3 focus:outline-none focus:ring-2 focus:ring-slate-400 resize-none"></textarea>
+        <button id="sendBtn" class="rounded-xl px-4 py-3 bg-black text-white hover:opacity-90 transition">ส่ง</button>
+      </form>
+
+      <div class="mt-2 flex gap-2 flex-wrap text-sm">
+        <button class="px-3 py-2 rounded-full bg-slate-100 hover:bg-slate-200" data-sample>
+          ตารางใน dataset มีอะไรบ้าง?
+        </button>
+        <button class="px-3 py-2 rounded-full bg-slate-100 hover:bg-slate-200" data-sample>
+          สรุป total sale แต่ละสาขา 7 วันล่าสุด
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-500 mt-3">
+        tips: กด <kbd>Shift</kbd>+<kbd>Enter</kbd> เพื่อตขึ้นบรรทัดใหม่ • ถ้าคิวรีหนักให้ใส่ <code>LIMIT</code>
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const form = document.getElementById('askForm');
+    const input = document.getElementById('q');
+    const sendBtn = document.getElementById('sendBtn');
+
+    function renderMarkdown(md) {
+      marked.setOptions({ breaks: true, gfm: true });
+      const html = marked.parse(md ?? "");
+      return DOMPurify.sanitize(html);
+    }
+
+    function autosize(el){
+      el.style.height = 'auto';
+      el.style.height = Math.min(el.scrollHeight, 200) + 'px';
+    }
+    input.addEventListener('input', () => autosize(input));
+    autosize(input);
+
+    function addMsg(role, text) {
+      const row = document.createElement('div');
+      row.className = 'flex items-end gap-3 ' + (role === 'user' ? 'justify-end' : 'justify-start');
+
+      const avatar = document.createElement('div');
+      avatar.className = 'shrink-0 w-9 h-9 rounded-full grid place-items-center font-medium ' + (role === 'user' ? 'bg-emerald-200' : 'bg-slate-200');
+      avatar.textContent = role === 'user' ? 'You' : 'AI';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble rounded-2xl px-4 py-3 msg prosem ' + (role === 'user' ? 'bg-emerald-50 text-right' : 'bg-slate-100 text-left');
+
+      bubble.style.maxWidth = '50%';
+
+      if (role === 'ai') {
+        bubble.innerHTML = renderMarkdown(text);
+      } else {
+        bubble.textContent = text;
+      }
+     
+      if (role === 'user') { 
+        row.appendChild(bubble);
+        row.appendChild(avatar);
+      } else {
+        row.appendChild(avatar);
+        row.appendChild(bubble);
+      }
+
+      chat.appendChild(row);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function setLoading(isLoading){
+      sendBtn.disabled = isLoading;
+      sendBtn.textContent = isLoading ? 'กำลังส่ง...' : 'ส่ง';
+    }
+
+    async function ask(q){
+      addMsg('user', q);
+      input.value = ''; autosize(input); input.focus();
+
+      const thinking = document.createElement('div');
+      thinking.className = 'text-sm text-slate-500 pl-12';
+      thinking.textContent = 'กำลังคิด/คิวรีข้อมูล...';
+      chat.appendChild(thinking); chat.scrollTop = chat.scrollHeight;
+      setLoading(true);
+
+      try{
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ query: q }),
+        });
+        const data = await res.json();
+        chat.removeChild(thinking);
+        if (data.ok) addMsg('ai', data.message || '(ไม่มีข้อความตอบกลับ)');
+        else addMsg('ai', '❌ เกิดข้อผิดพลาด');
+      }catch(err){
+        chat.removeChild(thinking);
+        addMsg('ai', '❌ เรียก API ไม่สำเร็จ: ' + (err?.message || err));
+      }finally{
+        setLoading(false);
+      }
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        const q = input.value.trim();
+        if (q) ask(q);
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (!q) return;
+      ask(q);
+    });
+
+    document.querySelectorAll('[data-sample]').forEach((btn) => {
+      btn.addEventListener('click', () => ask(btn.textContent.trim()));
+    });
+
+    addMsg('ai', 'สวัสดี! พิมพ์คำถามได้เลย เช่น:\n - สรุป **total sale** แต่ละสาขา 7 วันล่าสุด\n - ตารางใน dataset มีอะไรบ้าง?');
+  </script>
+</body>
+</html>
