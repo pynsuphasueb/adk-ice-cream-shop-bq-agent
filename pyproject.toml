@@ -1,0 +1,23 @@
+[project]
+name = "icecream-bq-agent-web"
+version = "0.1.0"
+description = "Basic BigQuery Chat (ADK)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "python-dotenv==1.1.0",
+  "fastapi==0.116.1",
+  "uvicorn==0.35.0",
+  "google-adk==1.10.0",
+  "google-genai==1.29.0",
+  "google-auth==2.40.3",
+  "google-cloud-bigquery==3.35.1",
+]
+
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main", "agent"]

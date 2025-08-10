@@ -1,0 +1,18 @@
+# เลือกอย่างใดอย่างหนึ่ง:
+# 1) ใช้ Google AI Studio
+# GOOGLE_API_KEY=your_ai_studio_key
+
+# 2) ใช้ Vertex AI (แทนด้านบน)
+# GOOGLE_GENAI_USE_VERTEXAI=TRUE
+# GOOGLE_CLOUD_PROJECT=your_project_id
+# GOOGLE_CLOUD_LOCATION=us-central1
+
+# APP_NAME=icecream_shop_app
+# USER_ID=sky_user
+# SESSION_ID=web-session-1
+# DB_URL=sqlite:///./adk_sessions.db
+
+GOOGLE_GENAI_USE_VERTEXAI=1
+GOOGLE_CLOUD_PROJECT=PROJECT_NAME
+GOOGLE_CLOUD_LOCATION=asia-southeast1
+GOOGLE_APPLICATION_CREDENTIALS="xxx.json"
