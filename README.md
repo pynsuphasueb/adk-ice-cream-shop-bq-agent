@@ -75,7 +75,7 @@ export GOOGLE_API_KEY="YOUR_AI_STUDIO_KEY"
 gcloud auth application-default login
 gcloud config set project YOUR_PROJECT_ID
 
-uv run uvicorn app:app --reload --port 8000
+uv run uvicorn main:app --reload --port 8000
 # open http://localhost:8000
 ```
 
@@ -96,7 +96,7 @@ export GOOGLE_API_KEY="YOUR_AI_STUDIO_KEY"
 gcloud auth application-default login
 gcloud config set project YOUR_PROJECT_ID
 
-uvicorn app:app --reload --port 8000
+uvicorn main:app --reload --port 8000
 ```
 
 ---
@@ -140,3 +140,7 @@ Open the printed URL (typically `http://localhost:8000`) and pick the module tha
 - Optionally add a simple SQL guard to reject queries outside your dataset.
 
 ---
+
+## Example
+
+![example](./images/example.png)
